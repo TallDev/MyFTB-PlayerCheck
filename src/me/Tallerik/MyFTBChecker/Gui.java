@@ -5,14 +5,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Gui {
-    private JLabel name;
+    private JLabel label;
     private JTextField player;
     private JButton submit;
+    private JPanel root;
+    private JButton refresh;
 
     public Gui() {
 
-
-
+        JFrame frame = new JFrame("MyFTB-Checker");
+        frame.add(root);
+        frame.setVisible(true);
+        frame.pack();
 
         submit.addActionListener(new ActionListener() {
             @Override
@@ -20,5 +24,12 @@ public class Gui {
 
             }
         });
+        refresh.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Var.refresh();
+            }
+        });
     }
+
 }
