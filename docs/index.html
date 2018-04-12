@@ -9,15 +9,21 @@
     </style>
     <script>
           var rows = ["dev", "admin", "user"];
+          var stat = [False, False, False];
           function mini() {
             document.getElementById(rows[0]).style.display = "none";
             document.getElementById(rows[1]).style.display = "none";
             document.getElementById(rows[2]).style.display = "none";
+            
+            stat[0] = False;
+            stat[1] = False;
+            stat[2] = False;
           }
           function collabse(obj) {
             mini();
-            if(document.getElementById(obj).style.display == "none") {
+            if(!stat[obj]) {
               document.getElementById(obj).style.display = "block";
+              stat[obj] = True;
             }
           }
     </script>
@@ -25,17 +31,17 @@
   <body>
     <h1>Startseite</h1>
     
-    <button class="accordion" onClick="collabse('dev')">Developer Docs</button>
+    <button class="accordion" onClick="collabse(0)">Developer Docs</button>
     <div class="panel" id="dev">
       <p>Hier</p>
     </div>
 
-    <button class="accordion" onClick="collabse('admin')">Administrator Docs</button>
+    <button class="accordion" onClick="collabse(1)">Administrator Docs</button>
     <div class="panel" id="admin">
       <p>Hier</p>
     </div>
 
-    <button class="accordion" onClick="collabse('user')">User Docs</button>
+    <button class="accordion" onClick="collabse(2)">User Docs</button>
     <div class="panel" id="user">
       <p>Hier</p>
     </div> 
