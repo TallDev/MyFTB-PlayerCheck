@@ -9,21 +9,21 @@
     </style>
     <script>
           var rows = ["dev", "admin", "user"];
-          var stat = [False, False, False];
+          var stat = [0, 0, 0];
           function mini() {
             document.getElementById(rows[0]).style.display = "none";
             document.getElementById(rows[1]).style.display = "none";
             document.getElementById(rows[2]).style.display = "none";
             
-            stat[0] = False;
-            stat[1] = False;
-            stat[2] = False;
+            stat[0] = 0;
+            stat[1] = 0;
+            stat[2] = 0;
           }
           function collabse(obj) {
             mini();
             if(!stat[obj]) {
               document.getElementById(obj).style.display = "block";
-              stat[obj] = True;
+              stat[obj] = 1;
             }
           }
     </script>
