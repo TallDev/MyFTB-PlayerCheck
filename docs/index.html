@@ -22,9 +22,12 @@
           }
           function collabse(obj) {
             mini(obj);
-            if(!stat[obj]) {
+            if(stat[obj] == 0) {
               document.getElementById(rows[obj]).style.display = "block";
               stat[obj] = 1;
+            } elseif(stat[obj] == 1) {
+              document.getElementById(rows[obj]).style.display = "none";
+              stat[obj] = 0;
             }
           }
     </script>
