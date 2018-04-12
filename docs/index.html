@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyFTB PlayerCheck - Docs</title>
+    <style>
+        .accordion{background-color:#eee;color:#444;cursor:pointer;padding:18px;width:100%;text-align:left;border:none;outline:0;transition:.4s}.accordion:hover,.active{background-color:#ccc}.panel{padding:0 18px;background-color:#fff;display:none;overflow:hidden}
+        .iframe{border:none;width:98%;height:470px;}
+        .accordion p {width:100%;}
+        .panel {margin-left:auto;margin-right:auto;}
+    </style>
+    <script>
+          var rows = ["dev", "admin", "user"];
+          var stat = [0, 0, 0];
+          function mini(obj) {
+            if(obj != 0) {document.getElementById(rows[0]).style.display = "none";}
+            if(obj != 1) {document.getElementById(rows[1]).style.display = "none";}
+            if(obj != 2) {document.getElementById(rows[2]).style.display = "none";} 
+            
+            if(obj != 0) {stat[0] = 0;}
+            if(obj != 1) {stat[1] = 0;}
+            if(obj != 2) {stat[2] = 0;}
+
+          }
+          function collabse(obj) {
+            mini(obj);
+            if(stat[obj] == 0) {
+              document.getElementById(rows[obj]).style.display = "block";
+              stat[obj] = 1;
+            } else if(stat[obj] == 1) {
+              document.getElementById(rows[obj]).style.display = "none";
+              stat[obj] = 0;
+            }
+          }
+    </script>
+  </head>
+  <body>
+    <h1>Startseite</h1>
+    
+    <button class="accordion" onClick="collabse(0)">Developer Docs</button>
+    <div class="panel" id="dev">
+      <p>
+      <h1><a href="DevDocs/Startpage.html" target="_blank">Developer Docs</a></h1>
+      </p>
+    </div>
+
+    <button class="accordion" onClick="collabse(1)">Administrator Docs</button>
+    <div class="panel" id="admin">
+      <p>
+      <h1><a href="AdminDocs/Startpage.html" target="_blank">Administrator Docs</a></h1>
+      </p>
+    </div>
+
+    <button class="accordion" onClick="collabse(2)">User Docs</button>
+    <div class="panel" id="user">
+      <p>
+      <h1><a href="UserDocs/Startpage.html" target="_blank">User Docs</a></h1>
+      </p>
+    </div> 
+  </body>
+</html>
