@@ -16,7 +16,11 @@
           }
           function collabse(obj) {
             mini();
-            document.getElementById(obj).style.display = "block";
+            if(document.getElementById(obj).style.display == "block") {
+              document.getElementById(obj).style.display = "none";
+            } else {
+              document.getElementById(obj).style.display = "block";
+            }
           }
     </script>
   </head>
