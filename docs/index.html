@@ -10,17 +10,18 @@
     <script>
           var rows = ["dev", "admin", "user"];
           var stat = [0, 0, 0];
-          function mini() {
-            document.getElementById(rows[0]).style.display = "none";
-            document.getElementById(rows[1]).style.display = "none";
-            document.getElementById(rows[2]).style.display = "none";
+          function mini(obj) {
+            if(obj != 0) {document.getElementById(rows[0]).style.display = "none";}
+            if(obj != 1) {document.getElementById(rows[1]).style.display = "none";}
+            if(obj != 2) {document.getElementById(rows[2]).style.display = "none";} 
             
-            stat[0] = 0;
-            stat[1] = 0;
-            stat[2] = 0;
+            if(obj != 0) {stat[0] = 0;}
+            if(obj != 1) {stat[1] = 0;}
+            if(obj != 2) {stat[2] = 0;}
+
           }
           function collabse(obj) {
-            mini();
+            mini(obj);
             if(!stat[obj]) {
               document.getElementById(rows[obj]).style.display = "block";
               stat[obj] = 1;
