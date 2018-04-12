@@ -1,1 +1,43 @@
-# Comming Soon
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyFTB PlayerCheck - DeveloperDocs</title>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <h1>Developer Docs</h1>
+
+    <pre><code class="Java">
+    
+    public static String getSiteContent() throws IOException {
+        Socket socket = new Socket("tallerikyt.ddns.net", 80);
+        InputStream in = socket.getInputStream();
+        Scanner scan = new Scanner(in);
+
+        OutputStream out = socket.getOutputStream();
+        PrintStream psout = new PrintStream(out);
+
+        psout.println("GET /myftb/getPlayers.php HTTP/1.1");
+        psout.println("Host: tallerikyt.ddns.net");
+        psout.println("User-Agent: Mozilla/5.0");
+        psout.println();
+
+        int i = 0;
+        String output = "";
+        while (scan.hasNextLine()) {
+            String s = scan.nextLine();
+            if(i == 7) {
+                output = s;
+            }
+            i++;
+        }
+        return output;
+}
+    
+    </code></pre>
+  </body>
+</html>
