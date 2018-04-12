@@ -8,24 +8,33 @@
         .accordion{background-color:#eee;color:#444;cursor:pointer;padding:18px;width:100%;text-align:left;border:none;outline:0;transition:.4s}.accordion:hover,.active{background-color:#ccc}.panel{padding:0 18px;background-color:#fff;display:none;overflow:hidden}
     </style>
     <script type="text/javascript>
-        var i,acc=document.getElementsByClassName("accordion");for(i=0;i<acc.length;i++)acc[i].addEventListener("click",function(){this.classList.toggle("active");var e=this.nextElementSibling;"block"===e.style.display?e.style.display="none":e.style.display="block"});
+          var rows = ["dev", "admin", "user"];
+          function mini() {
+            document.getElementById(rows[0]).hide();
+            document.getElementById(rows[1]).hide();
+            document.getElementById(rows[2]).hide();
+          }
+          function collabse(obj) {
+            mini();
+            document.getElementById(obj).show();
+          }
     </script>
   </head>
   <body>
     <h1>Startseite</h1>
     
-    <button class="accordion">Developer Docs</button>
-    <div class="panel">
+    <button class="accordion" onClick="collabse('dev')">Developer Docs</button>
+    <div class="panel" id="dev">
       <p>Hier</p>
     </div>
 
-    <button class="accordion">Administrator Docs</button>
-    <div class="panel">
+    <button class="accordion" onClick="collabse('admin')">Administrator Docs</button>
+    <div class="panel" id="admin">
       <p>Hier</p>
     </div>
 
-    <button class="accordion">User Docs</button>
-    <div class="panel">
+    <button class="accordion" onClick="collabse('user')">User Docs</button>
+    <div class="panel" id="user">
       <p>Hier</p>
     </div> 
   </body>
