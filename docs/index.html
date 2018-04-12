@@ -10,13 +10,13 @@
     <script>
           var rows = ["dev", "admin", "user"];
           function mini() {
-            document.getElementById(rows[0]).hide();
-            document.getElementById(rows[1]).hide();
-            document.getElementById(rows[2]).hide();
+            document.getElementById(rows[0]).style.display = "none";
+            document.getElementById(rows[1]).style.display = "none";
+            document.getElementById(rows[2]).style.display = "none";
           }
           function collabse(obj) {
             mini();
-            document.getElementById(obj).show();
+            document.getElementById(obj).style.display = "block";
           }
     </script>
   </head>
