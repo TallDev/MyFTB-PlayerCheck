@@ -10,6 +10,7 @@ public class Gui {
     private JButton submit;
     private JPanel root;
     private JButton refresh;
+    private JLabel outputText;
 
     public Gui() {
 
@@ -21,13 +22,20 @@ public class Gui {
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Var.relook(player.getText());
             }
         });
         refresh.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Var.refresh();
+                String online = Var.relook(player.getText());
+                if(online != "") {
+                    outputText.setText("Die Spieler " + online + " sind online");
+                } else {
+                    outputText.setText("Die angegebenen Spieler sind nicht online");
+                }
+
             }
         });
     }
