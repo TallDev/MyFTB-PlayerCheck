@@ -50,10 +50,11 @@ public class Var {
             for (String player : players) {
                 if(a.equalsIgnoreCase(player)) {
                     onlinePlayers = onlinePlayers + a + ", ";
+                    break;
                 }
             }
         }
-        System.out.println(players);
+        // System.out.println(players);
         return onlinePlayers;
     }
 }
