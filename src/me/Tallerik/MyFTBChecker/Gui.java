@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Gui.
+ */
 public class Gui {
     private JLabel label;
     private JTextField player;
@@ -12,6 +15,9 @@ public class Gui {
     private JButton refresh;
     private JLabel outputText;
 
+    /**
+     * Instantiates a new Gui.
+     */
     public Gui() {
 
         JFrame frame = new JFrame("MyFTB-Checker");

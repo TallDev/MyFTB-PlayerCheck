@@ -7,9 +7,18 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ * The type Get players.
+ */
 public class getPlayers {
 
 
+    /**
+     * Gets a player list.
+     *
+     * @return the site content
+     * @throws IOException the io exception
+     */
     public static String getSiteContent() throws IOException {
         Socket socket = new Socket("tallerikyt.ddns.net", 80);
         InputStream in = socket.getInputStream();

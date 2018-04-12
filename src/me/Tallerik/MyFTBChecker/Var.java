@@ -4,14 +4,29 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Var.
+ */
 public class Var {
+    /**
+     * The Players.
+     */
     static List<String> players;
+    /**
+     * The Url.
+     */
     static String url;
 
+    /**
+     * Instantiates a new Var.
+     */
     public Var() {
 
     }
 
+    /**
+     * Refresh player list
+     */
     public static void refresh() {
         try {
             String content = getPlayers.getSiteContent();
@@ -22,6 +37,12 @@ public class Var {
         }
     }
 
+    /**
+     * Relook input in players.
+     *
+     * @param ask input from text field
+     * @return the equaling players
+     */
     public static String relook(String ask) {
         List<String> asks = Arrays.asList(ask.split(" "));
         String onlinePlayers = "";
