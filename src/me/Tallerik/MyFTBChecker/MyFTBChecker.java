@@ -2,6 +2,7 @@ package me.Tallerik.MyFTBChecker;
 
 /**
  * The type Myftb checker.
+ * Code By
  */
 public class MyFTBChecker {
 
